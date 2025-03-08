@@ -1,15 +1,17 @@
 #### Create envirement
 
+```python
 python3 -m venv <name>
 ex: python3 -m venv venv
+```
 
 #### Run virtual envirement
 
-source venv/bin/activate
+`source venv/bin/activate`
 
 #### Insrall fastapi
 
-pip install "fastapi[standard]"
+`pip install "fastapi[standard]"`
 
 #### Run server
 
