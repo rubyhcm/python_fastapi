@@ -50,3 +50,16 @@ except Exception as error:
 
 1. Create `app/main.py`
 2. Create `__init__.py`
+
+# SQL Alchemy
+
+Using ORM
+
+#### Install SQL Alchemy
+
+`pip install sqlalchemy`
+
+#### Steps
+
+1. Create 'app/database.py'
+2. Create 'app/models.py'
