@@ -24,6 +24,7 @@ class Note(Base):
 
     # Relationship to the User model
     user = relationship("User", back_populates="notes")
+    votes = relationship("Vote", back_populates="note", cascade="all, delete-orphan")
     # [
     #     {
     #         "title": "hello",
@@ -47,6 +48,7 @@ class User(Base):
 
     # Relationship to the Note model
     notes = relationship("Note", back_populates="user", cascade="all, delete-orphan")
+    votes = relationship("Vote", back_populates="user", cascade="all, delete-orphan")
     # [
     #     {
     #         "title": "hello",
@@ -59,3 +61,13 @@ class User(Base):
     #     }
     # ]
 
+class Vote(Base):
+    __tablename__ = "votes"
+    user_id = Column(UUID(as_uuid=True), ForeignKey('users.id', ondelete="CASCADE"), primary_key=True)
+    note_id = Column(UUID(as_uuid=True), ForeignKey('notes.id', ondelete="CASCADE"), primary_key=True)
+
+    # Relationship to the User model
+    user = relationship("User", back_populates="votes")
+    # Relationship to the Note model
+    note = relationship("Note", back_populates="votes")
+    

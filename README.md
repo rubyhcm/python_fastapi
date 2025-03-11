@@ -76,8 +76,11 @@ Using ORM
 #### Encrypt password
 
 `pip install 'passlib[bcrypt]'`
+
 `pip install --upgrade bcrypt`
+
 `pip uninstall bcrypt`
+
 `pip install bcrypt==4.0.1`
 
 #### JWT

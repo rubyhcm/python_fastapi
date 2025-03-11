@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from .database import Engine
 from . import models
-from .routers import note, user, auth
+from .routers import note, user, auth, vote
 
 # Set logging
 # import logging
@@ -24,6 +24,7 @@ app = FastAPI()
 app.include_router(note.router)
 app.include_router(user.router)
 app.include_router(auth.router)
+app.include_router(vote.router)
 
 # Root
 @app.get("/")

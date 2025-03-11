@@ -1,6 +1,7 @@
 from typing import Optional
 from uuid import UUID
 from pydantic import BaseModel, EmailStr
+from pydantic.types import conint
 
 # Payload and validation
 class UserOut(BaseModel):
@@ -53,3 +54,14 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id: Optional[str] = None
+
+class Vote(BaseModel):
+    note_id: UUID
+    dir: conint(le=1)
+
+class NoteOut(BaseModel):
+    Note: Note
+    votes: int
+
+    class Config:
+        from_attributes = True
