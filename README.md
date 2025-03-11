@@ -63,3 +63,31 @@ Using ORM
 
 1. Create 'app/database.py'
 2. Create 'app/models.py'
+3. Create 'app/schemas.py'
+
+#### Check packages
+
+`pip freeze`
+
+#### Validate email
+
+`pip install email-validator`
+
+#### Encrypt password
+
+`pip install 'passlib[bcrypt]'`
+`pip install --upgrade bcrypt`
+`pip uninstall bcrypt`
+`pip install bcrypt==4.0.1`
+
+#### JWT
+
+`pip install 'python-jose[cryptography]'`
+
+#### ENV file
+
+`pip install python-dotenv`
+
+#### Using
+
+`user.__dict__ == user.first`
