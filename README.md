@@ -94,3 +94,23 @@ Using ORM
 #### Using
 
 `user.__dict__ == user.first`
+
+#### Migration
+
+`pip install alembic`
+
+`alembic init alembic` to init
+
+`alembic revision -m 'create notes table'` to create migration
+
+`alembic upgrade head` or `alembic upgrade 3f2cb1cd21cd`to run migration
+
+`alembic downgrade -1` or `alembic downgrade 3f2cb1cd21cd` to downgrade
+
+`alembic current` to check status
+
+#### Requirement
+
+`pip freeze > requirements.txt`
+
+`pip install -r requirements.txt` to install

@@ -2,15 +2,22 @@ from fastapi import FastAPI
 from .database import Engine
 from . import models
 from .routers import note, user, auth, vote
+from fastapi.middleware.cors import CORSMiddleware
 
 # Set logging
 # import logging
 # logging.basicConfig()
 # logging.getLogger('sqlalchemy.engine').setLevel(logging.DEBUG)
 
-models.Base.metadata.create_all(bind=Engine)
-
 app = FastAPI()
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Params and Validation
 # class Post(BaseModel):
