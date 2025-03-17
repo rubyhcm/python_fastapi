@@ -5,8 +5,10 @@ from sqlalchemy.orm import Session
 from ..database import get_db
 from .. import models, utils, oauth2
 
+# import pdb
+
 router = APIRouter(
-    prefix="/auth",
+    # prefix="/auth",
     tags=["auth"]
 )
 
@@ -39,7 +41,10 @@ def login(db: Session = Depends(get_db), user_credentials: OAuth2PasswordRequest
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
     
     token = oauth2.create_access_token(data = {"user_id": user.id})
-    return {"token": token, "token_type": "bearer"}
+
+    # pdb.set_trace()  
+
+    return {"access_token": token, "token_type": "bearer"}
     # We can use OAuth2PasswordRequestForm, but we need use username instead of email
 
 # curl -X POST "http://your-api-url/auth/login" \

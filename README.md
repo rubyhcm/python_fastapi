@@ -114,3 +114,23 @@ Using ORM
 `pip freeze > requirements.txt`
 
 `pip install -r requirements.txt` to install
+
+#### Notes
+
+http://127.0.0.1:8000/docs must be defined api /login with respone key "access_token"
+
+#### Debugger
+
+```python
+import pdb
+
+pdb.set_trace()
+
+# using
+vars(user)
+dir(user)
+```
+
+Example in app/routers/auth.py
+
+Or we can use Run & Debug configuration in .vscode/launch.json

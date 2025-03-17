@@ -1,6 +1,4 @@
 from fastapi import FastAPI
-from .database import Engine
-from . import models
 from .routers import note, user, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -135,4 +133,3 @@ def read_root():
 # @app.get("/items/{item_id}")
 # async def read_item(item_id: int, q: Union[str, None] = None):
 #     return {"item_id": item_id, "q": q}
-
